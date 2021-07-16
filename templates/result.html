@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card-body" style="margin: 1em; width: 500px;">
+	<p> Conversion of {{ details.amt }} {{ details.c1.upper() }} to {{ details.c2.upper() }} is: {{ details.symbol }} {{'%0.2f'| format(details.rate|float)}} </p>
+	
+	<form action="/home-btn">
+		<button type="submit" class="btn btn-primary" id="home-btn" name="home-btn">Home</button>	
+	</form>
+</div>
+{% endblock %}
+
+

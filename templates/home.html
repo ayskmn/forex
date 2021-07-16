@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block content %}
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		{% for msg in messages %}
+			<div class="w-50 p-3 rounded mb-2 mt-4 bg-danger text-white">{{ msg }} </div>
+		{% endfor %}
+	{% endif %}
+{% endwith %}
+
+<form action="/conversion" method="POST" role="form" class="form-horizontal">
+	<div class="card-body" style="margin: 1em; width: 500px;">
+		<h2>Foreign Exchange Converter</h2>
+		<div class="form-group">
+		  <label for="convert-from">Converting from</label>
+		  <select class="form-control" id="convert-from" name="convert-from">
+			<option disabled hidden selected>Select One</option>
+			<option>EUR</option>
+			<option>IDR</option>
+			<option>BGN</option>
+			<option>ILS</option>
+			<option>GBP</option>
+			<option>DKK</option>
+			<option>CAD</option>
+			<option>JPY</option>
+			<option>HUF</option>
+			<option>RON</option>
+			<option>MYR</option>
+			<option>SEK</option>
+			<option>SGD</option>
+			<option>HKD</option>
+			<option>AUD</option>
+			<option>CHF</option>
+			<option>KRW</option>
+			<option>CNY</option>
+			<option>TRY</option>
+			<option>HRK</option>
+			<option>NZD</option>
+			<option>THB</option>
+			<option>USD</option>
+			<option>NOK</option>
+			<option>RUB</option>
+			<option>INR</option>
+			<option>MXN</option>
+			<option>CZK</option>
+			<option>BRL</option>
+			<option>PLN</option>
+			<option>PHP</option>
+			<option>ZAR</option>
+		  </select>
+		</div>
+		<div class="form-group">
+		  <label for="convert-to">Converting to</label>
+		  <select class="form-control" id="convert-to" name="convert-to">
+			<option disabled hidden selected>Select One</option>
+			<option>EUR</option>
+			<option>IDR</option>
+			<option>BGN</option>
+			<option>ILS</option>
+			<option>GBP</option>
+			<option>DKK</option>
+			<option>CAD</option>
+			<option>JPY</option>
+			<option>HUF</option>
+			<option>RON</option>
+			<option>MYR</option>
+			<option>SEK</option>
+			<option>SGD</option>
+			<option>HKD</option>
+			<option>AUD</option>
+			<option>CHF</option>
+			<option>KRW</option>
+			<option>CNY</option>
+			<option>TRY</option>
+			<option>HRK</option>
+			<option>NZD</option>
+			<option>THB</option>
+			<option>USD</option>
+			<option>NOK</option>
+			<option>RUB</option>
+			<option>INR</option>
+			<option>MXN</option>
+			<option>CZK</option>
+			<option>BRL</option>
+			<option>PLN</option>
+			<option>PHP</option>
+			<option>ZAR</option>
+		  </select>
+		</div>
+		<div class="form-group">
+		  <label for="amount">Amount:</label>
+		  <input type="text" class="form-control" id="amount" name="amount" placeholder="" required>
+		</div>
+		<button type="submit" class="btn btn-primary">Convert</button>	
+	</div>
+</form>
+{% endblock %}
+</body> 
+</html>
